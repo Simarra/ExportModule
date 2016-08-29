@@ -1,0 +1,50 @@
+INSTALL:
+
+1. REQUIREMENTS
+1. CLIENT SIDE
+2. SERVER SIDE
+
+
+1. REQUIEREMENT
+In order to run the plugin you need:
+ - A Qgis installation on the client and server side (tested on 2.14 and 2.16)
+ - A postgis database with the datas of the CEN Pic. (year 2016)
+ - computers with Windows licences.
+
+
+2. CLIENT SIDE
+
+
+ Juste put the folder ModuleExport in the qgis plugin folder.
+ example:  C:\Users\NOM_UTILISATEUR\.qgis2\python\plugins 
+ 
+ Thean activate de plugin in the plugin manager directly in Qgis.
+ 
+ 
+3. SERVER SIDE
+ a. Prepare the database.
+ Create temp tables (functions are in the code pdf file)
+ • w_faune_select / w_flore_select 
+ • w_type_export 
+ • z_export 
+ 
+ Create functions in the database.
+  • _1_recupdesid 
+  • _2_filtrage 
+  • _exportXXX
+  • kill_tables
+  
+  
+  b. Prepare Bat files
+  You have to create specifis files for export. You also need to adapt the paths of the destination in the functions in Postgis.
+  2 files have to be created: 
+  batfiles: where the batfiles are
+  export : where the results of export are.
+  
+  c. Define the path to OGR2OGR.
+  
+  
+  
+ The plugin is ready.
+  
+  For more information, read the documentation_module_export.pdf (in french only.) 
